@@ -2,7 +2,9 @@
 
 <ul>
   <% @tweets.each do |tweet| %>
-    <li><%= tweet.user.name %> tweeted:
+    <li><%= tweet.user.username %> tweeted:
     <%= tweet.text %></li>
   <% end %>
 </ul>
+
+<%= render 'form' %>
