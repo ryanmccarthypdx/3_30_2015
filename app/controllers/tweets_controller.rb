@@ -25,6 +25,10 @@ class TweetsController < ApplicationController
 
   def edit
     @tweet = Tweet.find(params[:id])
+    respond_to do |format|
+      format.html { redirect_to tweets_path }
+      format.js
+    end
   end
 
   def update
