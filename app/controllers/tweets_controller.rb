@@ -33,10 +33,10 @@ class TweetsController < ApplicationController
 
   def update
     @tweet = Tweet.find(params[:id])
-    if @tweet.update(tweet_params)
-      redirect_to tweets_path
-    else
-      redirect_to :back
+    @tweet.update(tweet_params)
+    respond_to do |format|
+      format.html { redirect_to tweets_path }
+      format.js
     end
   end
 
