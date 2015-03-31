@@ -1,2 +1,15 @@
-$('#edit_form').hide();
-$('#shown_tweet_<%= @tweet.id %>').show();
+// this one means that the show is the old version:
+// $('#shown_tweet_<%= @tweet.id %>').show();
+// $('#edit_form').hide();
+
+//this one means that you can't delete it
+// $('#edit_form').hide().after('<%= j render @tweet %>')
+
+//this one means that you can only edit it once
+// $('#edit_form').hide().after('<%= j render(@tweet) %>');
+// $('#shown_tweet_<%= @tweet.id %>').remove();
+
+//this one means that the second time you edit it, the form doesn't go away
+// $('#shown_tweet_<%= @tweet.id %>').remove();
+$('#edit_form').after('<%= j render(@tweet) %>');
+$('#edit_form').remove();

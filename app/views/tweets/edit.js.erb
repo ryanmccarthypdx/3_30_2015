@@ -1,1 +1,2 @@
-$('#shown_tweet_<%= @tweet.id %>').hide().after('<span id="edit_form"><%= j render "form" %></span>');
+$('#shown_tweet_<%= @tweet.id %>').after('<span id="edit_form"><%= j render "form" %></span>');
+$('#shown_tweet_<%= @tweet.id %>').remove();
